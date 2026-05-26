@@ -339,3 +339,48 @@ fun PartlyCloudyIcon(modifier: Modifier = Modifier) {
         drawCloud(offsetY = size.height * 0.14f)
     }
 }
+
+@Composable
+fun SnowCloudIcon(modifier: Modifier = Modifier) {
+    Canvas(modifier = modifier) {
+        drawCloud(offsetY = 0f)
+
+        val snowColor = Color(0xFFBFDFFF)
+        val startY = size.height * 0.72f
+        val xs = listOf(0.27f, 0.43f, 0.58f, 0.73f)
+
+        xs.forEachIndexed { index, x ->
+            val cx = size.width * x
+            val cy = startY + if (index % 2 == 0) 0f else size.height * 0.1f
+
+            drawLine(
+                color = snowColor,
+                start = Offset(cx - 4f, cy),
+                end = Offset(cx + 4f, cy),
+                strokeWidth = 2f,
+                cap = StrokeCap.Round
+            )
+            drawLine(
+                color = snowColor,
+                start = Offset(cx, cy - 4f),
+                end = Offset(cx, cy + 4f),
+                strokeWidth = 2f,
+                cap = StrokeCap.Round
+            )
+            drawLine(
+                color = snowColor,
+                start = Offset(cx - 3f, cy - 3f),
+                end = Offset(cx + 3f, cy + 3f),
+                strokeWidth = 2f,
+                cap = StrokeCap.Round
+            )
+            drawLine(
+                color = snowColor,
+                start = Offset(cx - 3f, cy + 3f),
+                end = Offset(cx + 3f, cy - 3f),
+                strokeWidth = 2f,
+                cap = StrokeCap.Round
+            )
+        }
+    }
+}
