@@ -303,3 +303,39 @@ fun CloudIcon(modifier: Modifier = Modifier) {
         drawCloud()
     }
 }
+
+@Composable
+fun PartlyCloudyIcon(modifier: Modifier = Modifier) {
+    Canvas(modifier = modifier) {
+        val sunCenter = Offset(size.width * 0.68f, size.height * 0.37f)
+        val sunRadius = size.width * 0.18f
+
+        drawCircle(
+            color = Yellow,
+            radius = sunRadius,
+            center = sunCenter
+        )
+
+        for (i in 0 until 8) {
+            val angle = Math.toRadians((i * 45).toDouble())
+            val inner = sunRadius * 1.45f
+            val outer = sunRadius * 2.05f
+
+            drawLine(
+                color = Yellow,
+                start = Offset(
+                    sunCenter.x + cos(angle).toFloat() * inner,
+                    sunCenter.y + sin(angle).toFloat() * inner
+                ),
+                end = Offset(
+                    sunCenter.x + cos(angle).toFloat() * outer,
+                    sunCenter.y + sin(angle).toFloat() * outer
+                ),
+                strokeWidth = 2.4f,
+                cap = StrokeCap.Square
+            )
+        }
+
+        drawCloud(offsetY = size.height * 0.14f)
+    }
+}
