@@ -63,3 +63,71 @@ private val OrangeButton = Color(0xFFFFB23B)
 private val CloudBlue = Color(0xFF61BFEF)
 private val White = Color.White
 private val Divider = Color(0xFF9B7AD6)
+
+@Composable
+fun WeatherStaticScreen() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = PurpleBackground
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(PurpleBackground)
+                .padding(WindowInsets.navigationBars.asPaddingValues())
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 26.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                SunIcon(
+                    modifier = Modifier.size(94.dp)
+                )
+
+                Spacer(modifier = Modifier.height(17.dp))
+
+                Text(
+                    text = "5.0°C",
+                    color = White,
+                    fontSize = 37.sp,
+                    fontWeight = FontWeight.Bold,
+                    lineHeight = 42.sp
+                )
+
+                Spacer(modifier = Modifier.height(5.dp))
+
+                Text(
+                    text = "Warszawa",
+                    color = White,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Normal
+                )
+
+                Spacer(modifier = Modifier.height(31.dp))
+
+                ForecastCard()
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Box(
+                    modifier = Modifier
+                        .padding(horizontal = 21.dp)
+                        .fillMaxWidth()
+                        .height(49.dp)
+                        .clip(RoundedCornerShape(26.dp))
+                        .background(OrangeButton),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Sprawdź pozostałe dni",
+                        color = White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            }
+        }
+    }
+}
