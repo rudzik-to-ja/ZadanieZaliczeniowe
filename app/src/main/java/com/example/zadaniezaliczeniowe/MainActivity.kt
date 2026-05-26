@@ -296,3 +296,10 @@ fun SunIcon(modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+fun CloudIcon(modifier: Modifier = Modifier) {
+    Canvas(modifier = modifier) {
+        drawCloud()
+    }
+}
