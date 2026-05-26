@@ -77,7 +77,7 @@ fun WeatherStaticScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 SunIcon(
-                    modifier = Modifier.size(88.dp)
+                    modifier = Modifier.size(94.dp)
                 )
 
                 Spacer(modifier = Modifier.height(17.dp))
@@ -151,7 +151,7 @@ fun ForecastCard() {
             Text(
                 text = "1.12.2024",
                 color = White,
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -229,7 +229,7 @@ fun WeatherHourItem(
         Text(
             text = temp,
             color = White,
-            fontSize = 19.sp,
+            fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             maxLines = 1,
             textAlign = TextAlign.Center
@@ -248,7 +248,7 @@ fun WeatherHourItem(
         Text(
             text = time,
             color = White,
-            fontSize = 16.sp,
+            fontSize = 13.sp,
             fontWeight = FontWeight.Normal
         )
     }
