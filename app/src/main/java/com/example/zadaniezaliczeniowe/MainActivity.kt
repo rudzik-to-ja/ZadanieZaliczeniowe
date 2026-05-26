@@ -73,11 +73,11 @@ fun WeatherStaticScreen() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top = 26.dp),
+                    .padding(top = 56.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 SunIcon(
-                    modifier = Modifier.size(94.dp)
+                    modifier = Modifier.size(88.dp)
                 )
 
                 Spacer(modifier = Modifier.height(17.dp))
@@ -85,9 +85,9 @@ fun WeatherStaticScreen() {
                 Text(
                     text = "5.0°C",
                     color = White,
-                    fontSize = 37.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
-                    lineHeight = 42.sp
+                    lineHeight = 36.sp
                 )
 
                 Spacer(modifier = Modifier.height(5.dp))
