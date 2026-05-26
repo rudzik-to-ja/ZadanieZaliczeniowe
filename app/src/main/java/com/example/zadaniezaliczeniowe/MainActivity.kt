@@ -1,4 +1,4 @@
-package com.example.weatherstatic
+package com.example.zadaniezaliczeniowe
 
 import android.os.Bundle
 import android.view.Window
