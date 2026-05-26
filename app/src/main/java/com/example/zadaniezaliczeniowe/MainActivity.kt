@@ -215,3 +215,9 @@ fun ForecastCard() {
         }
     }
 }
+
+enum class WeatherIconType {
+    Snow,
+    Cloud,
+    PartlyCloudy
+}
