@@ -259,3 +259,40 @@ fun WeatherHourItem(
         )
     }
 }
+
+@Composable
+fun SunIcon(modifier: Modifier = Modifier) {
+    Canvas(modifier = modifier) {
+        val center = Offset(size.width / 2f, size.height / 2f)
+        val radius = size.minDimension * 0.31f
+
+        drawCircle(
+            color = Yellow,
+            radius = radius,
+            center = center
+        )
+
+        val inner = size.minDimension * 0.44f
+        val outer = size.minDimension * 0.58f
+
+        for (i in 0 until 8) {
+            val angle = Math.toRadians((i * 45).toDouble())
+            val start = Offset(
+                x = center.x + cos(angle).toFloat() * inner,
+                y = center.y + sin(angle).toFloat() * inner
+            )
+            val end = Offset(
+                x = center.x + cos(angle).toFloat() * outer,
+                y = center.y + sin(angle).toFloat() * outer
+            )
+
+            drawLine(
+                color = Yellow,
+                start = start,
+                end = end,
+                strokeWidth = 4.2f,
+                cap = StrokeCap.Square
+            )
+        }
+    }
+}
