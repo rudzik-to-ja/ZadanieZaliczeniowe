@@ -40,3 +40,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.math.cos
 import kotlin.math.sin
+
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val window: Window = window
+        window.statusBarColor = android.graphics.Color.rgb(117, 117, 117)
+        window.navigationBarColor = android.graphics.Color.BLACK
+
+        setContent {
+            WeatherStaticScreen()
+        }
+    }
+}
+
+private val PurpleBackground = Color(0xFF5B27B5)
+private val DarkPurpleCard = Color(0xFF4A2496)
+private val Yellow = Color(0xFFFFC815)
+private val OrangeButton = Color(0xFFFFB23B)
+private val CloudBlue = Color(0xFF61BFEF)
+private val White = Color.White
+private val Divider = Color(0xFF9B7AD6)
