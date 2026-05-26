@@ -384,3 +384,40 @@ fun SnowCloudIcon(modifier: Modifier = Modifier) {
         }
     }
 }
+
+private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawCloud(
+    offsetY: Float = 0f
+) {
+    val y = offsetY
+
+    drawCircle(
+        color = CloudBlue,
+        radius = size.width * 0.19f,
+        center = Offset(size.width * 0.34f, y + size.height * 0.52f)
+    )
+
+    drawCircle(
+        color = CloudBlue,
+        radius = size.width * 0.25f,
+        center = Offset(size.width * 0.52f, y + size.height * 0.43f)
+    )
+
+    drawCircle(
+        color = CloudBlue,
+        radius = size.width * 0.18f,
+        center = Offset(size.width * 0.70f, y + size.height * 0.53f)
+    )
+
+    drawRoundRect(
+        color = CloudBlue,
+        topLeft = Offset(size.width * 0.18f, y + size.height * 0.48f),
+        size = androidx.compose.ui.geometry.Size(
+            width = size.width * 0.68f,
+            height = size.height * 0.26f
+        ),
+        cornerRadius = androidx.compose.ui.geometry.CornerRadius(
+            x = size.width * 0.13f,
+            y = size.width * 0.13f
+        )
+    )
+}
