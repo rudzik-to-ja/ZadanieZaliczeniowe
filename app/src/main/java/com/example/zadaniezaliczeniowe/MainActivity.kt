@@ -221,3 +221,41 @@ enum class WeatherIconType {
     Cloud,
     PartlyCloudy
 }
+
+@Composable
+fun WeatherHourItem(
+    temp: String,
+    time: String,
+    type: WeatherIconType
+) {
+    Column(
+        modifier = Modifier.size(width = 50.dp, height = 112.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = temp,
+            color = White,
+            fontSize = 19.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1,
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        when (type) {
+            WeatherIconType.Snow -> SnowCloudIcon(modifier = Modifier.size(48.dp))
+            WeatherIconType.Cloud -> CloudIcon(modifier = Modifier.size(48.dp))
+            WeatherIconType.PartlyCloudy -> PartlyCloudyIcon(modifier = Modifier.size(48.dp))
+        }
+
+        Spacer(modifier = Modifier.height(9.dp))
+
+        Text(
+            text = time,
+            color = White,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Normal
+        )
+    }
+}
