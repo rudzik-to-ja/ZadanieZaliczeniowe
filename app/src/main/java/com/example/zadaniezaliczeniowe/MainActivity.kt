@@ -131,3 +131,87 @@ fun WeatherStaticScreen() {
         }
     }
 }
+
+@Composable
+fun ForecastCard() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(219.dp)
+            .clip(RoundedCornerShape(9.dp))
+            .background(DarkPurpleCard)
+            .padding(start = 38.dp, end = 38.dp, top = 31.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Dzisiaj",
+                color = White,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            Text(
+                text = "1.12.2024",
+                color = White,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
+        Spacer(modifier = Modifier.height(9.dp))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(Divider)
+        )
+
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            WeatherHourItem(
+                temp = "4.0°C",
+                time = "8:00",
+                type = WeatherIconType.Snow
+            )
+
+            WeatherHourItem(
+                temp = "4.5°C",
+                time = "10:00",
+                type = WeatherIconType.Cloud
+            )
+
+            WeatherHourItem(
+                temp = "4.7°C",
+                time = "12:00",
+                type = WeatherIconType.Cloud
+            )
+
+            WeatherHourItem(
+                temp = "5.0°C",
+                time = "14:00",
+                type = WeatherIconType.PartlyCloudy
+            )
+
+            WeatherHourItem(
+                temp = "5.0°C",
+                time = "16:00",
+                type = WeatherIconType.PartlyCloudy
+            )
+
+            WeatherHourItem(
+                temp = "4.7°C",
+                time = "18:00",
+                type = WeatherIconType.PartlyCloudy
+            )
+        }
+    }
+}
